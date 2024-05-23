@@ -14,13 +14,12 @@ datasource db {
 }
 
 model IndividualNumber {
-  id         String     @id @default(uuid())
-  firstName  String
-  middleName String
-  lastName   String
-  birthday   DateTime
-  gender     String
-  adderess   String
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @default(now())
+  id           String     @id @default(uuid())
+  firstName    String
+  lastName     String
+  birthday     DateTime
+  gender       String
+  adderess     String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @default(now())
 }
