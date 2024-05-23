@@ -51,8 +51,8 @@ services:
     ports:
       - "1025:1025"
       - "8025:8025"
-  gqle.localhost:
-    container_name: gqle
+  gql.localhost:
+    container_name: gql
     image: hasura/graphql-engine:v2.39.0
     ports:
       - "8180:8080"
@@ -60,6 +60,7 @@ services:
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgresql://bn_keycloak:password@db:5432/hasura
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
-      HASURA_GRAPHQL_ADMIN_SECRET: XLpbQ2xHghijY7Wsn5ObTP4AsDHuVkW4
+      HASURA_GRAPHQL_ADMIN_SECRET: password
+      HASURA_GRAPHQL_JWT_SECRET: '{"jwk_uri": "http://idp.localhost:8080/realms/demo/protocol/openid-connect/certs"}'
     depends_on:
       - db
